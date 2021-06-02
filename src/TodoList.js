@@ -6,7 +6,8 @@ function TodoList() {
     const [todos, setTodos] = useState([]);
 
     const addTodos = todo => {
-        setTodos([todo, ...todos]);
+        const newTodos = [todo, ...todos];
+        setTodos(newTodos);
     }
 
     const completeTodo = id => {
@@ -16,7 +17,7 @@ function TodoList() {
           }
           return todo;
       })
-      setTodos(updatedTodos);
+      return setTodos(updatedTodos);
     }
 
     return (
