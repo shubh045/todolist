@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import RemovedTodo from './RemovedTodo';
 //  import Todo from './Todo';
-import TodoForm from './TodoForm'
+import TodoForm from './TodoForm';
+ import './style.css';
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
@@ -40,10 +41,10 @@ function TodoList() {
 
 
     return (
-        <div>
-            <h1>Tasks to do</h1>
+        
+        <div className='todo-list'>
+            <h1 className='h1'>Tasks to do</h1>
             <TodoForm onSubmit={addTodos} />
-             {/* <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} />  */}
             <RemovedTodo 
             todos={todos} 
             removeTodo={removeTodo} 
@@ -51,6 +52,7 @@ function TodoList() {
             />
 
         </div>
+        
     )
 }
 

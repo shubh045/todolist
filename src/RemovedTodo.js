@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Todo from './Todo';
+ import './style.css';
 
 function RemovedTodo({removeTodo, todos, updateTodo}) {
 
@@ -16,7 +17,7 @@ function RemovedTodo({removeTodo, todos, updateTodo}) {
     }
     
     return (
-        <div>
+        <div className='remove-todo'>
             <Todo 
             todos={todos} 
             removeTodo={removeTodo} 
@@ -26,24 +27,20 @@ function RemovedTodo({removeTodo, todos, updateTodo}) {
             doneTodo={doneTodo}  
             />
 
-            <h1>Completed Task</h1>
-            {/* {
-                todos.map( event => (
-                    <div onSubmit={handleClick}>
-                    {event.text}
-                    </div>
-                ) )
-            } */}
-            
+            <h1 className='h1'>Completed Tasks</h1>
+
            { [...doneTodo].map((item, index)  => (
-               
-                <ul key={index}>
+                <ul key={index} >
+                    <div className='r-ul'>
                     <li>
                         {item}
-                        <button type='button' onClick={() => removeDoneTodo(index)}>X</button>
+                        <button id='button' type='button' onClick={() => removeDoneTodo(index)}>X</button>
                     </li>
+                    </div>
                 </ul>
+                
         ))}
+        
           </div>
           
 )}

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 // import RemovedTodo from './RemovedTodo';
  import TodoForm from './TodoForm';
+ import './style.css';
 
 function Todo({todos, removeTodo, onItemClick, removeDoneTodo, updateTodo}) {
 const [edit, setEdit] = useState({
@@ -34,7 +35,9 @@ const handleClick = ({target}) => {
   }
 
     return todos.map((todo, index) => (
-        <div>
+      <div id='to-f'>
+        
+        <div className='todo'>
 
             <div id={todo.id}>
 
@@ -50,15 +53,16 @@ const handleClick = ({target}) => {
             {todo.text} 
             </div>
 
-          <div>
-              <button onClick={() => removeTodo(todo.id)}>Remove</button>
+          <div className='re-btn'>
+              <button id='r-btn' onClick={() => removeTodo(todo.id)}>X</button>
 
-              <button onClick={() => setEdit({
+              <button id='e-btn' onClick={() => setEdit({
                 id: todo.id,
                 value: todo.text
               })}> Edit </button>
           </div>
-
+        </div>
+        
         </div>
     ))
 }
