@@ -3,23 +3,33 @@ import React, {useState} from 'react';
  import TodoForm from './TodoForm';
  import './style.css';
 
-function Todo({todos, removeTodo, onItemClick, removeDoneTodo, updateTodo}) {
+function Todo({todos, removeTodo, onItemClick, removeDoneTodo, updateTodo, donetodo}) {
 const [edit, setEdit] = useState({
-  id: null, 
+  id: null , 
   value: ''
 });
 
 const [values, setValues] = useState(false);
  
-    const handleToggle = (id) => {
-      let val = !values;
-        setValues(val); 
+    const handleToggle = () => {
+      // let val = !values;
+      //   setValues(val); 
+      
+        
+        setValues(values => !values); 
+      
     }
+     
 
 const handleClick = ({target}) => {
   const item = target.value;
-  if(!values) onItemClick(item);
-  else {removeDoneTodo(todos.id)}
+  // const ide= target.values.id;
+  // if(!values===true) onItemClick(item);
+  // else removeDoneTodo(item);
+  
+    if(!values===true) onItemClick(item);
+    else removeDoneTodo(item);
+  
    } 
 
    const submitUpdate = value => {
@@ -35,9 +45,9 @@ const handleClick = ({target}) => {
   }
 
     return todos.map((todo, index) => (
-      <div id='to-f'>
+      <div>
         
-        <div className='todo'>
+        <div className='todo' id='to-f'>
 
             <div id={todo.id}>
 
@@ -46,8 +56,8 @@ const handleClick = ({target}) => {
             key={todo.id} 
             value={todo.text} 
             name='text'
-             onChange={handleToggle}
-            onClick={handleClick} 
+             onClick={handleToggle}
+            onChange={handleClick} 
              />
 
             {todo.text} 
@@ -62,6 +72,7 @@ const handleClick = ({target}) => {
               })}> Edit </button>
           </div>
         </div>
+      
         
         </div>
     ))

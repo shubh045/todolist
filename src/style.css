@@ -19,8 +19,9 @@
      text-align: center;
      position: relative;
      right: 30px;
-     font-family: cursive, fantasy, monospace, Georgia, 'Times New Roman', Times, serif;
-     font-style: oblique;
+     font-family: sans-serif, Georgia, 'Times New Roman', Times, serif;
+     text-transform: capitalize;
+     font-style: normal;
     font-weight: bold;
     color: rgb(7, 41, 114);
  }
@@ -51,17 +52,19 @@
 
  /* #to-f{
     transition: all 0.3% linear;
- }
+ }*/
  
- #to-f :hover{
-    box-shadow: rgba(6, 21, 102, 0.8) 5px 5px 15px ;
-    transform: inset;
-} */
-
+ #to-f:hover:nth-child(1){
+    /* box-shadow: rgba(6, 21, 102, 0.8) 5px 5px 15px ;
+       transform: inset; */
+       background-color: aliceblue;
+       cursor: pointer;
+   } 
+ 
  .todo{
      display: flex;
      flex-direction: row;
-    font-size: 20px;
+     font-size: 20px;
      margin-top: 20px;
      align-items: center;
      border: solid;
@@ -76,7 +79,7 @@
    height: 30px;
    border: unset;
  }
-
+   
  #r-btn{
      background-color: cadetblue;
      margin-right: 2px;
@@ -102,4 +105,9 @@
     margin-left: 20px;
  }
 
- 
+ @media (max-width: 400px) {
+     .body{
+         margin-left: 10px;
+         margin-right: 10px;
+     }
+ }

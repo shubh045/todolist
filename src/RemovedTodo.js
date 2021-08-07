@@ -12,7 +12,7 @@ function RemovedTodo({removeTodo, todos, updateTodo}) {
     }
 
     const removeDoneTodo = id => {
-        const removeArr = [...doneTodo].filter((todo, index) => index !== id);
+        const removeArr = [...doneTodo].filter((todo, index) => todo !== id);
         setDoneTodo(removeArr);
     }
     
@@ -34,7 +34,7 @@ function RemovedTodo({removeTodo, todos, updateTodo}) {
                     <div className='r-ul'>
                     <li>
                         {item}
-                        <button id='button' type='button' onClick={() => removeDoneTodo(index)}>X</button>
+                        <button id='button' type='button' onClick={() => removeDoneTodo(item)}>X</button>
                     </li>
                     </div>
                 </ul>
