@@ -55,7 +55,7 @@ const handleClick = ({target}) => {
             type='checkBox' 
             key={todo.id} 
             value={todo.text} 
-            name='text'
+            name={todo.text}
              onClick={handleToggle}
             onChange={handleClick} 
              />
