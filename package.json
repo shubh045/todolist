@@ -1,6 +1,6 @@
 {
-  "homepage": "http://shubh045.github.io/todolist/",
   "name": "todolist",
+  "homepage": "https://shubh045.github.io/todolist",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
